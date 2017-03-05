@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/arvind/.android/build-cache/79ac811674fc657d303a951301ca1614e9c3d00a/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7113302c965566b66df46c6ca75ea301576114a5">
+        <dex dex="/Users/arvind/Documents/Projects/Pingu/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_287b6269a77422089afecfecc81ef08c0ba33102/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/arvind/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.1/support-annotations-23.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
+        <dex dex="/Users/arvind/Documents/Projects/Pingu/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.2.1_7a0ef4e9f5a67b8213c1bfd7cea218b95a9e154d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/arvind/Documents/Projects/Pingu/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="/Users/arvind/Documents/Projects/Pingu/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_da8f8c1f02e6f086a43c62c67adc88693521d0fc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/arvind/.android/build-cache/fb5faf014ad14ff9a8b3424e5c850ae12fd82546/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e4d0cbb0b999604b349062f0214a0a228a7fd151">
+        <dex dex="/Users/arvind/Documents/Projects/Pingu/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a21fbd1159c92b446500f124ec22adff5683080e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/arvind/Library/Android/sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.1/constraint-layout-solver-1.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1ad79631209e77b0a2730fc112b4cc0c66a95132">
+        <dex dex="/Users/arvind/Documents/Projects/Pingu/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.1_ac8fe73206a8267f323ee8a55abac19430d0a985/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/arvind/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-ddb-mapper/2.3.9/b64f410bf2f4d4db5642f066d9bad54d2ea4608c/aws-android-sdk-ddb-mapper-2.3.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b64f410bf2f4d4db5642f066d9bad54d2ea4608c">
+        <dex dex="/Users/arvind/Documents/Projects/Pingu/app/build/intermediates/transforms/dex/debug/folders/1000/10/aws-android-sdk-ddb-mapper-2.3.9_458dcd4720d665449b72be93f770ba0b68448e6b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/arvind/.android/build-cache/eba8e325395d35b1212b4e07b1ad05bc54baa35d/output/jars/libs/internal_impl-23.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
+        <dex dex="/Users/arvind/Documents/Projects/Pingu/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.2.1_4c1b5d56d88ec879d42a5b2d224bbb67c5ad914e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/arvind/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-ddb/2.3.9/5d12b8c7c10b169cdddb3d6c09c800a42dfba6b7/aws-android-sdk-ddb-2.3.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5d12b8c7c10b169cdddb3d6c09c800a42dfba6b7">
+        <dex dex="/Users/arvind/Documents/Projects/Pingu/app/build/intermediates/transforms/dex/debug/folders/1000/10/aws-android-sdk-ddb-2.3.9_0d148e1965caa03e24154246f679ad4b70e4af97/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/arvind/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-core/2.3.9/2fa9ee0e95329912656c8ccd98991b195a3ea539/aws-android-sdk-core-2.3.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2fa9ee0e95329912656c8ccd98991b195a3ea539">
+        <dex dex="/Users/arvind/Documents/Projects/Pingu/app/build/intermediates/transforms/dex/debug/folders/1000/10/aws-android-sdk-core-2.3.9_1f84b5cc6a749ff2d8a5cb120ba30d68727a3cb0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/arvind/Documents/Projects/Pingu/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d881f409dc8d5cdd78981ac29ac20cf9703e1044">
+        <dex dex="/Users/arvind/Documents/Projects/Pingu/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_52adb859a297dc5e2a0126b784b0697946700bea/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/arvind/.android/build-cache/af85a5ab2fa4d4b63d0af190592ae6fd1311a7a9/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3469cb457f10f74c28cbc05f069b6c894f6cbdd0">
+        <dex dex="/Users/arvind/Documents/Projects/Pingu/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_22179f772562a678c1662273a47e5194630cb8eb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/arvind/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-android-sdk-s3/2.3.9/8b4d1ccbb09daafd17aa3eba99af31ad8aecf505/aws-android-sdk-s3-2.3.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8b4d1ccbb09daafd17aa3eba99af31ad8aecf505">
+        <dex dex="/Users/arvind/Documents/Projects/Pingu/app/build/intermediates/transforms/dex/debug/folders/1000/10/aws-android-sdk-s3-2.3.9_5ef958a74f6623034d76acc0c127642c79d4769d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/arvind/.android/build-cache/558e9ca98e7f7e07be96c7fad4f61f99be03c4ad/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="673d77a5bbddd766037f088e775df525c46407f0">
+        <dex dex="/Users/arvind/Documents/Projects/Pingu/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c36de99503fe680a4684533cfd54f390b34ff8aa/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Applications/Android Studio 2.app/Contents/gradle/m2repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="/Users/arvind/Documents/Projects/Pingu/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.2.4_593dd7370e40f8ce8ad93dccb307d5f4c2b5b8d7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/arvind/.android/build-cache/eba8e325395d35b1212b4e07b1ad05bc54baa35d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
+        <dex dex="/Users/arvind/Documents/Projects/Pingu/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_08281f4333a27fe2dd805d442b7035b1746fc0e0/classes.dex" />
+    </item>
+
+</items>
