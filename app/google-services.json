@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "314887032719",
+    "project_id": "pingu-161920"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314887032719:android:a3cfef2e84770cc5",
+        "android_client_info": {
+          "package_name": "com.hackadroid.pingu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "314887032719-fl3e4kurri4pug3gvqubdje9813sq1gp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hackadroid.pingu",
+            "certificate_hash": "8724bb9eba7970a60db11f9938c62232f7f7533d"
+          }
+        },
+        {
+          "client_id": "314887032719-82fv41q5mo2r7r7u7qis4ouikmfkibp4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-Q_iAPgrPYVhbl8i6IFXsIS4c0rhFTGQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

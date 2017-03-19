@@ -10,8 +10,21 @@ import com.amazonaws.services.dynamodbv2.*;
 
 @DynamoDBTable(tableName = "PinguUserAuth")
 public class PinguUserAuthModel {
+
+
     String email_id;
     String last_logged_in;
+    String mobile_number;
+
+    @DynamoDBAttribute(attributeName = "_mobile_Number")
+    public String getMobile_number() {
+        return mobile_number;
+    }
+
+    public void setMobile_number(String mobile_number) {
+        this.mobile_number = mobile_number;
+    }
+
 
     @DynamoDBHashKey(attributeName = "_email_Id")
     public String getEmail_id() {
@@ -27,12 +40,19 @@ public class PinguUserAuthModel {
         return last_logged_in;
     }
 
-    public void setLast_logged_in(String last_logged_in){
+    public void setLastLoggedIn(String last_logged_in){
 
         this.last_logged_in=last_logged_in;
 
     }
 
-
+    @Override
+    public String toString() {
+        return "PinguUserAuthModel{" +
+                "email_id='" + email_id + '\'' +
+                ", last_logged_in='" + last_logged_in + '\'' +
+                ", mobile_number='" + mobile_number + '\'' +
+                '}';
+    }
 
 }
