@@ -27,6 +27,7 @@ import java.util.Map;
 
 /**
  * Created by arvind on 05/03/17.
+ * PinguUserAuthImpl implements the methods in PinguUserAuthDao
  */
 
 public class PinguUserAuthImpl implements PinguUserAuthDao {
@@ -60,8 +61,20 @@ public class PinguUserAuthImpl implements PinguUserAuthDao {
         return null;
     }
 
+    /**
+     * Method : isNewUser()
+     *              This method is used to check whether an user is a new user or not.
+     * @param email_id
+     *            The Email Id of the user
+     * @throws NetworkErrorException
+     * return isNewUser
+     *              true: if new User
+     *              false : if an existing User
+     */
+
+
     @Override
-    public boolean isNewUser(String email_id) {
+    public boolean isNewUser(String email_id) throws NetworkErrorException{
 
         PinguUserAuthModel model = new PinguUserAuthModel();
         model.setEmail_id(email_id);
