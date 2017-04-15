@@ -10,6 +10,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.CognitoCachingCredentialsProvider;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
@@ -21,13 +22,17 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.hackadroid.pingu.R;
+import com.hackadroid.pingu.com.hackadroid.pingu.constants.Credentials;
 import com.hackadroid.pingu.com.hackadroid.pingu.daoimpl.PinguUserAuthImpl;
 import com.hackadroid.pingu.com.hackadroid.pingu.datamodel.PinguUserAuthModel;
 import com.google.android.gms.auth.api.signin.*;
+import com.uber.sdk.core.auth.Scope;
+import com.uber.sdk.rides.client.SessionConfiguration;
 
 import org.apache.log4j.Logger;
 
 import java.sql.Timestamp;
+import java.util.Arrays;
 
 public class Intro1 extends AppCompatActivity  {
     private  GoogleApiClient mGoogleApiClient;
@@ -61,15 +66,21 @@ public class Intro1 extends AppCompatActivity  {
 
 
         CognitoCachingCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(
-                getApplicationContext(), // get the context for the current activity
-                "302190334691", // your AWS Account id
-                "us-west-2:785a9d24-4114-46d9-ba63-4608ad084552", // your identity pool id
-                "arn:aws:iam::302190334691:role/Cognito_PinguUnauth_Role",// an unauthenticated role ARN
-                "arn:aws:iam::302190334691:role/Cognito_PinguAuth_Role", // an authenticated role ARN
-                Regions.US_WEST_2 //Region
+                getApplicationContext(),
+                Credentials.AWS_ACCOUNT_ID,
+                Credentials.AWS_IDENTITY_POOL_ID,
+                Credentials.AWS_UNAUTHENTICATED_ROLE_ARN,
+                Credentials.AWS_AUTHENTICATED_ROLE_ARN,
+                Regions.US_WEST_2
         );
         pinguUserAuthimpl=new PinguUserAuthImpl(credentialsProvider);
 
+        SessionConfiguration config = new SessionConfiguration.Builder()
+                .setClientId(Credentials.UBER_CLIENT_ID)
+                .setServerToken(Credentials.UBER_SERVER_TOKEN)
+                .setScopes(Arrays.asList(Scope.RIDE_WIDGETS))
+                .setEnvironment(SessionConfiguration.Environment.SANDBOX)
+                .build();
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
