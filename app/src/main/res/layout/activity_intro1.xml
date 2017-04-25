@@ -10,33 +10,22 @@
     tools:context="com.hackadroid.pingu.com.hackadroid.pingu.activity.Intro1">
 
     <RelativeLayout
-        android:layout_width="wrap_content"
+        android:layout_width="368dp"
         android:layout_height="551dp"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="368dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Pingu"
-            android:textColor="#000000"
-            android:textSize="50dp"
-            android:typeface="monospace"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="93dp" />
 
         <com.google.android.gms.common.SignInButton
             android:id="@+id/sign_in_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:foregroundGravity="center"
-            tools:layout_editor_absoluteX="138dp"
-            tools:layout_editor_absoluteY="455dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="46dp" />
+            android:layout_marginBottom="46dp"
+            android:foregroundGravity="center"
+            tools:layout_editor_absoluteX="138dp"
+            tools:layout_editor_absoluteY="455dp" />
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

@@ -72,18 +72,21 @@ public class Intro1 extends AppCompatActivity  {
 
     }
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
-
-        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
-        if (requestCode == RC_SIGN_IN) {
-            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
-            log.info("SignInResult:"+result.isSuccess());
-            handleSignInResult(result);
+        try {
+            // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
+            if (requestCode == RC_SIGN_IN) {
+                GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+                log.info("SignInResult:" + result.isSuccess());
+                handleSignInResult(result);
+            }
+        }catch (Exception e){
+            log.info("Exception :"+e.getMessage());
         }
     }
 
-    private void handleSignInResult(GoogleSignInResult result) {
+    private void handleSignInResult(GoogleSignInResult result) throws Exception{
 
         if (result.isSuccess()) {
             // Signed in successfully, show authenticated UI.
@@ -105,14 +108,19 @@ public class Intro1 extends AppCompatActivity  {
 
     private void updateLastLoggedIn(final GoogleSignInAccount googleSignInAccount){
         try{
+            log.info("Updating last logged in..");
 
             Toast.makeText(getApplicationContext(), "Saving in DynamoDB",Toast.LENGTH_LONG).show();
             PinguUserAuthModel pinguUserAuthModel = new PinguUserAuthModel();
             pinguUserAuthModel.setEmail_id(googleSignInAccount.getEmail());
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
             pinguUserAuthModel.setLastLoggedIn(timestamp.toString());
+            log.info("HELLO");
             if(pinguUserAuthimpl.save(pinguUserAuthModel)){
                 log.info("Updated last logged in Successfully !!");
+            }
+            else{
+                log.info("Not able to update..");
             }
         }catch (Exception e){
             log.error(e.toString());
