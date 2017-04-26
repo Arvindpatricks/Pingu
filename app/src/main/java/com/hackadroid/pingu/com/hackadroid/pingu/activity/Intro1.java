@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.amazonaws.auth.CognitoCachingCredentialsProvider;
@@ -36,16 +37,19 @@ public class Intro1 extends AppCompatActivity  {
     private static DynamoDBMapper mapper;
     PinguUserAuthImpl pinguUserAuthimpl;
     private static final Logger log = Logger.getLogger(Intro1.class);
-
+    private ProgressBar spinner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_intro1);
+        spinner=(ProgressBar)findViewById(R.id.progressBar);
+        spinner.setVisibility(View.GONE);
         this.signInButton=(SignInButton)findViewById(R.id.sign_in_button);
         this.signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                spinner.setVisibility(View.VISIBLE);
                 signIn();
             }
         });
@@ -95,10 +99,14 @@ public class Intro1 extends AppCompatActivity  {
                 Toast.makeText(getApplicationContext(),"NEW USER..",Toast.LENGTH_LONG).show();
                 //TODO: Move to User Registration Page
             }
-            else{
+            else {
+                Toast.makeText(getApplicationContext(), "Updating", Toast.LENGTH_LONG).show();
                 log.info("User already exists.. Saving data..");
                 updateLastLoggedIn(acct);
-                //TODO: Move to next page with user credentials
+                Toast.makeText(getApplicationContext(), "Next page", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(Intro1.this, MapViewFragment.class);
+                startActivity(i);
+
             }
 
         } else {
@@ -112,10 +120,14 @@ public class Intro1 extends AppCompatActivity  {
 
             Toast.makeText(getApplicationContext(), "Saving in DynamoDB",Toast.LENGTH_LONG).show();
             PinguUserAuthModel pinguUserAuthModel = new PinguUserAuthModel();
+            Toast.makeText(getApplicationContext(), "Recording email id !!",Toast.LENGTH_LONG).show();
+            log.info("Recording email id !!");
             pinguUserAuthModel.setEmail_id(googleSignInAccount.getEmail());
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+            Toast.makeText(getApplicationContext(), "Recording time",Toast.LENGTH_LONG).show();
+            log.info("Recording time !!");
             pinguUserAuthModel.setLastLoggedIn(timestamp.toString());
-            log.info("HELLO");
+            Toast.makeText(getApplicationContext(), "Done",Toast.LENGTH_LONG).show();
             if(pinguUserAuthimpl.save(pinguUserAuthModel)){
                 log.info("Updated last logged in Successfully !!");
             }
