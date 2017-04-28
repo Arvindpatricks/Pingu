@@ -26,6 +26,7 @@ import com.hackadroid.pingu.com.hackadroid.pingu.daoimpl.PinguUserAuthImpl;
 import com.hackadroid.pingu.com.hackadroid.pingu.datamodel.PinguUserAuthModel;
 import com.google.android.gms.auth.api.signin.*;
 
+import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
 import java.sql.Timestamp;
@@ -96,38 +97,38 @@ public class Intro1 extends AppCompatActivity  {
             // Signed in successfully, show authenticated UI.
             GoogleSignInAccount acct = result.getSignInAccount();
             if(pinguUserAuthimpl.isNewUser(acct.getEmail())){
-                Toast.makeText(getApplicationContext(),"NEW USER..",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"NEW USER..",Toast.LENGTH_SHORT).show();
                 //TODO: Move to User Registration Page
             }
             else {
-                Toast.makeText(getApplicationContext(), "Updating", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Updating", Toast.LENGTH_SHORT).show();
                 log.info("User already exists.. Saving data..");
                 updateLastLoggedIn(acct);
-                Toast.makeText(getApplicationContext(), "Next page", Toast.LENGTH_LONG).show();
-                Intent i = new Intent(Intro1.this, MapViewFragment.class);
+                Toast.makeText(getApplicationContext(), "Next page", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(Intro1.this, Intro3.class);
                 startActivity(i);
 
             }
 
         } else {
-            Toast.makeText(getApplicationContext(),"Login Failed !!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Login Failed !!", Toast.LENGTH_SHORT).show();
         }
     }
 
     private void updateLastLoggedIn(final GoogleSignInAccount googleSignInAccount){
         try{
-            log.info("Updating last logged in..");
+           log.info("Updating last logged in..");
 
-            Toast.makeText(getApplicationContext(), "Saving in DynamoDB",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Saving in DynamoDB",Toast.LENGTH_SHORT).show();
             PinguUserAuthModel pinguUserAuthModel = new PinguUserAuthModel();
-            Toast.makeText(getApplicationContext(), "Recording email id !!",Toast.LENGTH_LONG).show();
-            log.info("Recording email id !!");
+            Toast.makeText(getApplicationContext(), "Recording email id !!",Toast.LENGTH_SHORT).show();
+          log.info("Recording email id !!");
             pinguUserAuthModel.setEmail_id(googleSignInAccount.getEmail());
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-            Toast.makeText(getApplicationContext(), "Recording time",Toast.LENGTH_LONG).show();
-            log.info("Recording time !!");
+            Toast.makeText(getApplicationContext(), "Recording time",Toast.LENGTH_SHORT).show();
+           log.info("Recording time !!");
             pinguUserAuthModel.setLastLoggedIn(timestamp.toString());
-            Toast.makeText(getApplicationContext(), "Done",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Done",Toast.LENGTH_SHORT).show();
             if(pinguUserAuthimpl.save(pinguUserAuthModel)){
                 log.info("Updated last logged in Successfully !!");
             }
