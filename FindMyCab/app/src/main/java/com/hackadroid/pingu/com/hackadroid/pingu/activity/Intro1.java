@@ -1,20 +1,15 @@
 package com.hackadroid.pingu.com.hackadroid.pingu.activity;
 
 import android.content.Intent;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.amazonaws.auth.CognitoCachingCredentialsProvider;
-import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
-import com.amazonaws.services.dynamodbv2.*;
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.*;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -26,13 +21,17 @@ import com.hackadroid.pingu.com.hackadroid.pingu.daoimpl.PinguUserAuthImpl;
 import com.hackadroid.pingu.com.hackadroid.pingu.datamodel.PinguUserAuthModel;
 import com.google.android.gms.auth.api.signin.*;
 
-import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
 import java.sql.Timestamp;
 
+/**
+ *
+ *
+ *
+ */
 public class Intro1 extends AppCompatActivity  {
-    private  GoogleApiClient mGoogleApiClient;
+    public  GoogleApiClient mGoogleApiClient;
     private SignInButton signInButton;
     private static final int RC_SIGN_IN = 0;
     private static DynamoDBMapper mapper;
@@ -101,11 +100,10 @@ public class Intro1 extends AppCompatActivity  {
                 //TODO: Move to User Registration Page
             }
             else {
-                Toast.makeText(getApplicationContext(), "Updating", Toast.LENGTH_SHORT).show();
+
                 log.info("User already exists.. Saving data..");
                 updateLastLoggedIn(acct);
-                Toast.makeText(getApplicationContext(), "Next page", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(Intro1.this, Intro3.class);
+                Intent i = new Intent(Intro1.this, LocationActivity.class);
                 startActivity(i);
 
             }
@@ -118,17 +116,11 @@ public class Intro1 extends AppCompatActivity  {
     private void updateLastLoggedIn(final GoogleSignInAccount googleSignInAccount){
         try{
            log.info("Updating last logged in..");
-
-            Toast.makeText(getApplicationContext(), "Saving in DynamoDB",Toast.LENGTH_SHORT).show();
+            log.info("Saving in DynamoDB");
             PinguUserAuthModel pinguUserAuthModel = new PinguUserAuthModel();
-            Toast.makeText(getApplicationContext(), "Recording email id !!",Toast.LENGTH_SHORT).show();
-          log.info("Recording email id !!");
             pinguUserAuthModel.setEmail_id(googleSignInAccount.getEmail());
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-            Toast.makeText(getApplicationContext(), "Recording time",Toast.LENGTH_SHORT).show();
-           log.info("Recording time !!");
             pinguUserAuthModel.setLastLoggedIn(timestamp.toString());
-            Toast.makeText(getApplicationContext(), "Done",Toast.LENGTH_SHORT).show();
             if(pinguUserAuthimpl.save(pinguUserAuthModel)){
                 log.info("Updated last logged in Successfully !!");
             }
